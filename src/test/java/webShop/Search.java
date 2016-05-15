@@ -47,13 +47,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 					System.out.println(resSrch);
 
 					assertEquals(proSrch + "is not in the list", true,resSrch.contains("Mouse"));
+					
 					driver.close();
 					
-				
-				driver.close();
-
 				}
-					
 				
 	}
 

@@ -50,15 +50,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 				 */
 			
 				String proName = driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).getText();
-				
-					if(proName.endsWith("...")) {
+							
+					if(proName.endsWith ("...")) {
 						proName = proName.substring(0, proName.length()-3);
+						 //proName = proName.substring(0, proName.indexOf("-"));
 					}
 				
 				driver.findElement(By.className("more")).click();
-				//System.out.println("proName" + proName);
+				System.out.println("proName" + proName);
 				String details = driver.findElement(By.cssSelector(".prodtitle")).getText();
-				//System.out.println(details);
+
+				System.out.println(details);
 				Assert.assertTrue("Unexpected product name, blog post title: " + proName + " - product page title: " + details, details.contains(proName));
 				
 				driver.close();
@@ -71,10 +73,18 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 				public void testiii() throws InterruptedException {
 	
 				String prodTitle = driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).getText();
+				
+				
 				driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[2]")).click();
+				String result = driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText();
+						
+				result = prodTitle.split("\n")[0];
+
+				System.out.println(prodTitle);
+				Assert.assertEquals(prodTitle,result);
 	
-				Assert.assertEquals(prodTitle,driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText());
-	
+				driver.close();
+
 				} 
 				
 

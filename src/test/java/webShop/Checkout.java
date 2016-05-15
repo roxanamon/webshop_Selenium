@@ -37,7 +37,8 @@ public class Checkout {
 				
 				TimeUnit.MILLISECONDS.sleep(2000);
 				Assert.assertEquals ("Oops, there is nothing in your cart.", Adelete);
-				
+				driver.close();
+
 			}	
 							
 }	

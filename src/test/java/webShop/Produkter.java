@@ -32,6 +32,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 			
 			String buyPro = driver.findElement(By.cssSelector(".prodtitle")).getText();
 			Assert.assertEquals(proName, buyPro);
+			
 			driver.close();
 		
 			}	
@@ -48,6 +49,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 			String buyPro = driver.findElement(By.cssSelector(".prodtitle")).getText();
 			System.out.println(buyPro);
 			Assert.assertEquals(proName, buyPro);
+			
 			driver.close();
 
 			}
@@ -91,6 +93,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 			Assert.assertEquals(3,list.size());
 
 			driver.close();
+			
 			}
 			
 //Verifiera att det går att bläddra manuellt i bildspelet
