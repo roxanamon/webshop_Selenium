@@ -84,7 +84,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 				}
 				System.out.println(prodTitle);
 				
-				Assert.assertEquals(prodTitle,driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText());
+				Assert.assertTrue(driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText().contains(prodTitle));
 	
 				driver.close();
 
