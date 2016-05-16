@@ -76,12 +76,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 				
 				
 				driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[2]")).click();
-				String result = driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText();
+				driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText();
 						
-				result = prodTitle.split("\n")[0];
-
+				if(prodTitle.endsWith ("...")) {
+					prodTitle = prodTitle.substring(0, prodTitle.length()-3);
+					 //proName = proName.substring(0, proName.indexOf("-"));
+				}
 				System.out.println(prodTitle);
-				Assert.assertEquals(prodTitle,result);
+				
+				Assert.assertEquals(prodTitle,driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText());
 	
 				driver.close();
 
@@ -94,6 +97,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 	
 				String prodTitle = driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[1]")).getText();
 				driver.findElement(By.xpath("//*[@id='footer']/section[2]/ul/li[1]/a[3]")).click();
+			
+				
+				if(prodTitle.endsWith ("...")) {
+					prodTitle = prodTitle.substring(0, prodTitle.length()-3);
+					 //proName = proName.substring(0, proName.indexOf("-"));
+				}
 	
 				Assert.assertEquals(prodTitle,driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText());
 
