@@ -2,6 +2,8 @@ package webShop;
 
 import org.junit.Test;
 import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.openqa.selenium.By;
@@ -15,6 +17,11 @@ public class Produktsidor {
 			@Before
 			public void Produkter(){
 			driver.get(" http://store.demoqa.com/");
+			}
+			
+			@After
+			public void tearDown(){
+				driver.close();
 			}
 			
 //Verifiera att produktsidan innehåller Titel Produktbeskrivning Pris
@@ -56,13 +63,14 @@ public class Produktsidor {
 				driver.findElement(By.linkText("More Info >")).click();
 				
 				String Bvarukorg=driver.findElement(By.className("count")).getText();
+				System.out.print(Bvarukorg);
 
 				driver.findElement(By.className("wpsc_buy_button")).click();
-				TimeUnit.MILLISECONDS.sleep(2000);
+				TimeUnit.MILLISECONDS.sleep(7000);
 				driver.findElement(By.className("continue_shopping")).click();
 
 				String Avarukorg=driver.findElement(By.className("count")).getText();
-				
+				System.out.println(Avarukorg);
 				Assert.assertNotEquals(Bvarukorg, Avarukorg);
 				
 				driver.close();				

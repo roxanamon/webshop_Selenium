@@ -28,7 +28,7 @@ public class AddToCart {
 				driver.findElement(By.linkText("More Info >")).click();
 
 				driver.findElement(By.className("wpsc_buy_button")).click();
-				TimeUnit.MILLISECONDS.sleep(2000);
+				TimeUnit.MILLISECONDS.sleep(7000);
 				String Aobject= driver.findElement(By.id("fancy_notification_content")).getText();
 				System.out.println(Aobject);
 
@@ -44,7 +44,7 @@ public class AddToCart {
 				driver.findElement(By.linkText("More Info >")).click();
 				
 				driver.findElement(By.className("wpsc_buy_button")).click();
-				TimeUnit.MILLISECONDS.sleep(2000);
+				TimeUnit.MILLISECONDS.sleep(7000);
 				driver.findElement(By.className("go_to_checkout")).click();
 				
 				Assert.assertTrue(driver.getTitle().contains("Checkout"));	
@@ -59,7 +59,7 @@ public class AddToCart {
 				driver.findElement(By.linkText("More Info >")).click();
 				
 				driver.findElement(By.className("wpsc_buy_button")).click();
-				TimeUnit.MILLISECONDS.sleep(2000);
+				TimeUnit.MILLISECONDS.sleep(7000);
 				driver.findElement(By.className("continue_shopping")).click();
 				
 				Assert.assertTrue(driver.getTitle().contains(Bobject));	

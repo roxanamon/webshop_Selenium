@@ -104,7 +104,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 					 //proName = proName.substring(0, proName.indexOf("-"));
 				}
 	
-				Assert.assertEquals(prodTitle,driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText());
+				Assert.assertTrue(driver.findElement(By.xpath("//*[@id='single_product_page_container']/div/div[2]/h1")).getText().contains(prodTitle));
+
+				driver.close();
 
 				} 
 			}

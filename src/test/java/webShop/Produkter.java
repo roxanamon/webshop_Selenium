@@ -86,7 +86,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 				if(!list.contains(proName))
 				list.add(proName);
 				
-				TimeUnit.MILLISECONDS.sleep(5000);
+				TimeUnit.MILLISECONDS.sleep(4000);
 				}
 				
 			System.out.println("list"+ list);
